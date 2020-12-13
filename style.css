@@ -30,6 +30,7 @@
         --special-color: #906272;
         --background-color: #414141;
         --grey-text: #525252;
+        scroll-behavior: smooth;
     }
     
     h1 {
@@ -365,6 +366,7 @@
         }
         /* Burger thing */
         .burger {
+            cursor: pointer;
             position: relative;
             display: block;
             /*to view the burger mobile view*/
@@ -392,32 +394,19 @@
             align-items: center;
             transition: transform 1s ease;
         }
-        .menu-check {
-            position: absolute;
-            top: 50%;
-            right: 5%;
-            transform: translate(5%, -50%);
-            width: 5rem;
-            height: 5rem;
-            cursor: pointer;
-            opacity: 0;
-            z-index: 100;
-            display: block;
-        }
-        .menu-check:checked+.nav-links {
+        .nav-open {
             transform: translateX(-100%);
         }
-        .menu-check:checked~.burger span {
+        .toggle .line1 {
+            transform: rotateZ(45deg) translateY(300%);
             background-color: white;
         }
-        .menu-check:checked~.burger span:nth-child(1) {
-            transform: rotateZ(45deg) translateY(300%);
-        }
-        .menu-check:checked~.burger span:nth-child(2) {
+        .toggle .line2 {
             opacity: 0;
         }
-        .menu-check:checked~.burger span:nth-child(3) {
+        .toggle .line3 {
             transform: rotateZ(-45deg) translateY(-300%);
+            background-color: white;
         }
         /* About */
         .about-text div {
